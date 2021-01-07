@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Reffra</h1>
+    <script>
+        window.onload = function() {
+          if(openApp() != true){
+            setTimeout(fallbackToStore, 2000);
+          }
+        };
+        function openApp() {
+          window.location.replace('refrra://' + window.location.host + window.location.pathname);
+          return;
+        };
+        function fallbackToStore() {
+          // Android Version:
+          if(navigator.userAgent.match(/android/i)) {
+            window.location = "https://play.google.com/store/apps/details?id=com.refrra";
+            window.close();
+          }  
+          // IOS Version:
+          else if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
+            window.location = "https://apps.apple.com/au/app/refero/id1438774501";
+            window.close();
+          }
+          // Computer Version:
+          else {
+            window.location = "https://refrra.io";
+          };
+        }
+      </script>
+</body>
+</html>
