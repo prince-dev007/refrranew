@@ -21,9 +21,10 @@
         function fallbackToStore() {
           // Android Version:
           if(navigator.userAgent.match(/Android/i)) {
-        //   window.location = "https://play.google.com/store/apps/details?id=com.refrra";
-        //     window.close();
-        alert('Android');
+       
+            alert('Android');
+                window.location.replace('refrra://stage.app.refrra.io/ver');
+               window.close();
 
           }  
           // IOS Version:
