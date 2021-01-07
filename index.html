@@ -9,13 +9,12 @@
     <h1>Reffra</h1>
 
     <script>
-   
-            window.onload = function() {
+        window.onload = function() {
           if(openApp() != true){
             setTimeout(fallbackToStore, 2000);
           }
         };
-        let host = 'refrra://stage.app.refrra.io/ver';
+        let host = "refrra://stage.app.refrra.io/ver";
         function openApp() {
           window.location.replace('refrra://' + host + window.location.pathname);
           return;
