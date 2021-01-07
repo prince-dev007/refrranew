@@ -10,25 +10,27 @@
 
     <script>
         window.onload = function() {
-          if(openApp() != true){
-            setTimeout(fallbackToStore, 2000);
-          }
+          openApp();
         };
-        let host = "refrra://stage.app.refrra.io/ver";
+       
         function openApp() {
-          window.location.replace('refrra://' + host + window.location.pathname);
-          return;
+          var check = window.location.replace('refrra://stage.app.refrra.io/ver');
+          if(!check)
+            fallbackToStore();
         };
         function fallbackToStore() {
           // Android Version:
-          if(navigator.userAgent.match(/android/i)) {
-            window.location = "https://play.google.com/store/apps/details?id=com.refrra";
-            window.close();
+          if(navigator.userAgent.match(/Android/i)) {
+        //   window.location = "https://play.google.com/store/apps/details?id=com.refrra";
+        //     window.close();
+        alert('Android');
+
           }  
           // IOS Version:
           else if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
-            window.location = "https://apps.apple.com/au/app/refero/id1438774501";
-            window.close();
+            // window.location = "https://apps.apple.com/au/app/refero/id1438774501";
+            // window.close();
+            alert('Iphone');
           }
           // Computer Version:
           else {
